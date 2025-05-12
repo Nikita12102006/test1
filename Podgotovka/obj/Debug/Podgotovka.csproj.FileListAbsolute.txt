@@ -1,0 +1,6 @@
+A:\Губернский колледж дз\Инструментальные срдства\Podgotovka\Podgotovka\bin\Debug\Podgotovka.dll
+A:\Губернский колледж дз\Инструментальные срдства\Podgotovka\Podgotovka\bin\Debug\Podgotovka.pdb
+A:\Губернский колледж дз\Инструментальные срдства\Podgotovka\Podgotovka\obj\Debug\Podgotovka.csproj.AssemblyReference.cache
+A:\Губернский колледж дз\Инструментальные срдства\Podgotovka\Podgotovka\obj\Debug\Podgotovka.csproj.CoreCompileInputs.cache
+A:\Губернский колледж дз\Инструментальные срдства\Podgotovka\Podgotovka\obj\Debug\Podgotovka.dll
+A:\Губернский колледж дз\Инструментальные срдства\Podgotovka\Podgotovka\obj\Debug\Podgotovka.pdb
