@@ -1,30 +1,33 @@
-name: .NET Core Desktop
+name: .NET Tests
+
 on:
   push:
-    branches: [ "master" ]
+    branches:
+      - main
+      - develop
   pull_request:
-    branches: [ "master" ]
+    branches:
+      - main
+      - develop
+
 jobs:
-  build:
-    strategy:
-      matrix:
-        configuration: [Debug]
+  build-and-test:
     runs-on: windows-latest
-    env:
-      Solution_Name: ClassLibrary2.sln
-      Test_Project_Path: ClassLibrary2/ClassLibrary2.csproj
+
     steps:
-      - name: Checkout repository
-        uses: actions/checkout@v4
-        with:
-          fetch-depth: 0
-      - name: Install .NET SDK
-        uses: actions/setup-dotnet@v4
-        with:
-          dotnet-version: 8.0.x
-      - name: Restore dependencies
-        run: dotnet restore ClassLibrary2.sln # Явно восстанавливаем зависимости
-      - name: Build
-        run: dotnet build ClassLibrary2.sln --configuration Debug --no-restore
-      - name: Execute unit tests
-        run: dotnet test ClassLibrary2.sln --configuration Debug --no-restore
+    - name: Checkout repository
+      uses: actions/checkout@v4
+
+    - name: Setup .NET
+      uses: actions/setup-dotnet@v3
+      with:
+        dotnet-version: '8.0' 
+
+    - name: Restore dependencies
+      run: dotnet restore
+
+    - name: Build solution
+      run: dotnet build --no-restore
+
+    - name: Run tests
+      run: dotnet test --no-build --verbosity normal
